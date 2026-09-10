@@ -50,7 +50,7 @@
 }
 
 .logo-circle:hover {
-  background-color: rgba(100, 255, 218, 0.1);
+  background-color: rgba(var(--accent-secondary-rgb), 0.1);
 }
 
 body.light-theme .logo-circle:hover {
@@ -101,7 +101,7 @@ button.mobile-only-theme {
 
 .theme-toggle-btn:hover {
   color: var(--accent-secondary);
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(var(--accent-secondary-rgb), 0.1);
 }
 
 body.light-theme .theme-toggle-btn:hover {
@@ -160,7 +160,7 @@ body.light-theme .theme-toggle-btn:hover {
 }
 
 .theme-toggle-btn-mobile:hover {
-  background: rgba(100, 255, 218, 0.1);
+  background: rgba(var(--accent-secondary-rgb), 0.1);
 }
 
 body.light-theme .theme-toggle-btn-mobile:hover {

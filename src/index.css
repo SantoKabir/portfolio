@@ -5,6 +5,7 @@
   --bg-tertiary: #233554;
   --accent-primary: #087f9b;
   --accent-secondary: #64ffda;
+  --accent-secondary-rgb: 100, 255, 218;
   --accent-tertiary: #4fd012;
   --text-primary: #ccd6f6;
   --text-secondary: #8892b0;
@@ -125,7 +126,7 @@ ul {
 }
 
 .btn-primary:hover {
-  background-color: rgba(100, 255, 218, 0.1);
+  background-color: rgba(var(--accent-secondary-rgb), 0.1);
   outline: none;
 }
 
@@ -158,6 +159,7 @@ body.light-theme {
   --text-tertiary: #64748b;
   --accent-primary: #cd8a5a;
   --accent-secondary: #df7126;
+  --accent-secondary-rgb: 223, 113, 38;
 }
 
 body.light-theme .glass-panel {
