@@ -33,7 +33,7 @@ const Experience = () => {
         'Applied GIS for geospatial data analysis.'
       ],
       docs: [
-        { name: 'RA Appointment Letter', file: 'Santo_Kabir_Ahmed_RA_Appointment_Letter.pdf' }
+        { name: 'RA Appointment Letter', file: 'RA_Appointment_Letter.pdf' }
       ]
     },
     {
