@@ -102,6 +102,28 @@
   color: var(--text-primary);
 }
 
+
+
+.see-more-container {
+  display: none;
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .certificate-card.mobile-hidden {
+    display: none !important;
+  }
+  
+  .see-more-container {
+    display: block;
+  }
+}
+
 /* Light Theme Overrides */
 body.light-theme .certificate-card {
   background-color: rgba(240, 235, 216, 0.6);

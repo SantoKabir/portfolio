@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink, FileText } from 'lucide-react';
 import './Certificates.css';
 
 const Certificates = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const certificates = [
     {
       title: 'NGS + TNC EXTERNSHIP',
@@ -75,7 +77,7 @@ const Certificates = () => {
             href={cert.externalLink ? cert.externalLink : `${import.meta.env.BASE_URL}${cert.file}`}
             target="_blank" 
             rel="noopener noreferrer"
-            className="certificate-card"
+            className={`certificate-card ${!showAll && index >= 2 ? 'mobile-hidden' : ''}`}
           >
             <div className="cert-image-container">
               <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} />
@@ -96,6 +98,11 @@ const Certificates = () => {
             </div>
           </a>
         ))}
+      </div>
+      <div className="see-more-container">
+        <button className="btn-primary see-more-btn text-mono" onClick={() => setShowAll(!showAll)}>
+          {showAll ? 'See Less' : 'See More'}
+        </button>
       </div>
     </section>
   );

@@ -25,9 +25,40 @@
   padding: 25px;
 }
 
+.category-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .category-title {
   font-size: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.skill-chevron {
+  display: none;
+  color: var(--accent-secondary);
+}
+
+@media (max-width: 768px) {
+  .category-title-wrapper {
+    cursor: pointer;
+  }
+  
+  .skill-chevron {
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .skill-chevron.open {
+    transform: rotate(180deg);
+  }
+  
+  .skills-list.mobile-closed {
+    display: none;
+  }
 }
 
 .skills-list {

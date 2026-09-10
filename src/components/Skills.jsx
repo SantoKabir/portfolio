@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import './Skills.css';
 
 const Skills = () => {
+  const [expandedCategories, setExpandedCategories] = useState({});
+
+  const toggleCategory = (index) => {
+    setExpandedCategories(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const skillCategories = [
     {
       title: 'Data Science & Software',
@@ -41,8 +51,14 @@ const Skills = () => {
         <div className="skills-grid">
           {skillCategories.map((category, index) => (
             <div className="skill-category glass-panel" key={index}>
-              <h3 className="category-title text-accent text-mono">{category.title}</h3>
-              <ul className="skills-list">
+              <div 
+                className="category-title-wrapper" 
+                onClick={() => toggleCategory(index)}
+              >
+                <h3 className="category-title text-accent text-mono">{category.title}</h3>
+                <ChevronDown className={`skill-chevron ${expandedCategories[index] ? 'open' : ''}`} />
+              </div>
+              <ul className={`skills-list ${!expandedCategories[index] ? 'mobile-closed' : ''}`}>
                 {category.skills.map((skill, i) => (
                   <li key={i}>{skill}</li>
                 ))}
