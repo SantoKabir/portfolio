@@ -20,6 +20,7 @@ const Certificates = () => {
       description: 'Advanced Python Programming certification.',
       file: 'Santo_Kabir_Python.png',
       image: 'Santo_Kabir_Python.png',
+      externalLink: 'https://certificates.mooc.fi/validate/q68xdaegps8',
       type: 'image'
     },
     {
@@ -29,6 +30,7 @@ const Certificates = () => {
       description: 'Freshwater and Community Conservation Externship.',
       file: 'NGS_TNC_Externship_Certificate.png',
       image: 'NGS_TNC_Externship_Certificate.png',
+      externalLink: 'https://www.credential.net/4ee77932-a76a-4ffe-a063-ba0f172121bc',
       type: 'image'
     },
     {
@@ -52,7 +54,7 @@ const Certificates = () => {
     {
       title: 'IELTS ACADEMIC',
       org: 'British Council',
-      date: '2024',
+      date: '2025',
       description: 'Achieved an overall band score of 8.00.',
       file: 'Santo_Kabir_Ahmed_IELTS.pdf',
       image: 'IELTS.png',
@@ -80,7 +82,7 @@ const Certificates = () => {
               <p className="cert-description">{cert.description}</p>
               
               <a 
-                href={`${import.meta.env.BASE_URL}${cert.file}`}
+                href={cert.externalLink ? cert.externalLink : `${import.meta.env.BASE_URL}${cert.file}`}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="cert-verify-link text-mono"
