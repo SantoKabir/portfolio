@@ -5,13 +5,23 @@ import './Certificates.css';
 const Certificates = () => {
   const certificates = [
     {
-      title: 'YOUTH FOR EARTH',
-      org: 'Ministry of Youth & Sports',
-      date: 'Feb 2025',
-      description: '2nd Runner-Up in the Youth for Earth Case Solving Competition.',
-      file: 'Youth for Earth.jpg',
-      image: 'Youth for Earth.jpg',
+      title: 'NGS + TNC EXTERNSHIP',
+      org: 'National Geographic Society',
+      date: 'Sep 2025',
+      description: 'Freshwater and Community Conservation Externship.',
+      file: 'NGS_TNC_Externship_Certificate.png',
+      image: 'NGS_TNC_Externship_Certificate.png',
+      externalLink: 'https://www.credential.net/4ee77932-a76a-4ffe-a063-ba0f172121bc',
       type: 'image'
+    },
+    {
+      title: 'IELTS ACADEMIC',
+      org: 'British Council',
+      date: 'Dec 2025',
+      description: 'Achieved an overall band score of 8.00.',
+      file: 'Santo_Kabir_Ahmed_IELTS.pdf',
+      image: 'IELTS_preview.png',
+      type: 'pdf'
     },
     {
       title: 'PYTHON PROGRAMMING',
@@ -21,16 +31,6 @@ const Certificates = () => {
       file: 'Santo_Kabir_Python.png',
       image: 'Santo_Kabir_Python.png',
       externalLink: 'https://certificates.mooc.fi/validate/q68xdaegps8',
-      type: 'image'
-    },
-    {
-      title: 'NGS + TNC EXTERNSHIP',
-      org: 'National Geographic Society',
-      date: 'Sep 2025',
-      description: 'Freshwater and Community Conservation Externship.',
-      file: 'NGS_TNC_Externship_Certificate.png',
-      image: 'NGS_TNC_Externship_Certificate.png',
-      externalLink: 'https://www.credential.net/4ee77932-a76a-4ffe-a063-ba0f172121bc',
       type: 'image'
     },
     {
@@ -52,13 +52,13 @@ const Certificates = () => {
       type: 'pdf'
     },
     {
-      title: 'IELTS ACADEMIC',
-      org: 'British Council',
-      date: 'Dec 2025',
-      description: 'Achieved an overall band score of 8.00.',
-      file: 'Santo_Kabir_Ahmed_IELTS.pdf',
-      image: 'IELTS.png',
-      type: 'pdf'
+      title: 'YOUTH FOR EARTH',
+      org: 'Ministry of Youth & Sports',
+      date: 'Feb 2025',
+      description: '2nd Runner-Up in the Youth for Earth Case Solving Competition.',
+      file: 'Youth for Earth.jpg',
+      image: 'Youth for Earth.jpg',
+      type: 'image'
     }
   ];
 
