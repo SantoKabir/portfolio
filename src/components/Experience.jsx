@@ -18,7 +18,7 @@ const Experience = () => {
         'Designed and distributed high-impact visual media—including posters and a comprehensive informative booklet—to drive widespread community knowledge dissemination and climate resilience.'
       ],
       docs: [
-        { name: 'SEED Funding Achievement Email', file: 'Seed Funding Achievement.pdf' }
+        { name: 'Extern Experience Letter', file: 'Extern_Experience_Letter.pdf' }
       ]
     },
     {
