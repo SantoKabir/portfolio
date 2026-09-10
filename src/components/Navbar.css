@@ -27,12 +27,38 @@
   position: relative;
 }
 
-.logo a {
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 2px solid var(--accent-secondary);
+  border-radius: 50%;
   color: var(--accent-secondary);
   font-family: var(--font-mono);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 1px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.logo-circle:hover {
+  background-color: rgba(100, 255, 218, 0.1);
+}
+
+body.light-theme .logo-circle:hover {
+  background-color: rgba(223, 113, 38, 0.1);
+}
+
+.mobile-only-theme {
+  display: none;
 }
 
 .desktop-menu {
@@ -156,5 +182,8 @@ body.light-theme .theme-toggle-btn-mobile:hover {
   }
   .nav-container {
     padding: 0 25px;
+  }
+  .mobile-only-theme {
+    display: flex;
   }
 }

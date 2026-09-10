@@ -47,8 +47,13 @@ const Navbar = () => {
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <div className="logo">
-          <a href="#home">SA</a>
+        <div className="logo-container">
+          <div className="logo">
+            <a href="#home" className="logo-circle">SK</a>
+          </div>
+          <button className="theme-toggle-btn mobile-only-theme" onClick={toggleTheme} aria-label="Toggle Theme">
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </div>
         
         <div className="desktop-menu">
