@@ -125,27 +125,24 @@
   
   .experience-tabs {
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     width: 100%;
-    overflow-x: auto;
     border-left: none;
     border-bottom: 2px solid var(--bg-tertiary);
     margin-bottom: 20px;
   }
   
   .tab-btn {
-    min-width: 130px;
-    height: 50px;
+    min-width: auto;
+    height: auto;
+    padding: 12px 15px;
     text-align: center;
     border-bottom: none;
     justify-content: center;
   }
   
   .tab-highlight {
-    top: auto;
-    bottom: -2px;
-    left: 0;
-    width: 130px;
-    height: 2px;
     display: none;
   }
   
