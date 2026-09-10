@@ -125,7 +125,8 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: rgba(100, 255, 218, 0.3);
+  background-color: var(--accent-secondary);
+  opacity: 0.3;
   z-index: 2;
   transition: var(--transition);
 }
@@ -135,7 +136,7 @@
 }
 
 .hero-image-container:hover .hero-image-overlay {
-  background-color: transparent;
+  opacity: 0;
 }
 
 @media (max-width: 992px) {
