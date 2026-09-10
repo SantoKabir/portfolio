@@ -57,7 +57,7 @@ body.light-theme .logo-circle:hover {
   background-color: rgba(223, 113, 38, 0.1);
 }
 
-.mobile-only-theme {
+button.mobile-only-theme {
   display: none;
 }
 
@@ -183,7 +183,7 @@ body.light-theme .theme-toggle-btn-mobile:hover {
   .nav-container {
     padding: 0 25px;
   }
-  .mobile-only-theme {
+  button.mobile-only-theme {
     display: flex;
   }
 }
