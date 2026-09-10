@@ -176,6 +176,14 @@
     border-radius: 0;
     box-shadow: none;
   }
+  
+  .image-overlay {
+    display: none;
+  }
+  
+  .project-image img {
+    filter: none;
+  }
 
   .project-card:nth-of-type(even) .project-image {
     grid-column: 1 / -1;

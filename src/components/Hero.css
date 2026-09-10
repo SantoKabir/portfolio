@@ -166,4 +166,12 @@
     width: 250px;
     height: 250px;
   }
+  
+  .hero-image-overlay {
+    display: none;
+  }
+  
+  .hero-image {
+    filter: none;
+  }
 }

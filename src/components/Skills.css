@@ -43,6 +43,10 @@
 }
 
 @media (max-width: 768px) {
+  .skill-category {
+    padding: 15px;
+  }
+
   .category-title-wrapper {
     cursor: pointer;
   }
