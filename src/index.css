@@ -149,3 +149,37 @@ ul {
     width: 100%;
   }
 }
+
+/* Light Theme (Beige/Nature) */
+body.light-theme {
+  --bg-primary: #fcf9f2;
+  --bg-secondary: #f0ebd8;
+  --bg-tertiary: #dcd3be;
+  --text-primary: #1e293b;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --accent-primary: #047857;
+  --accent-secondary: #0f766e;
+}
+
+body.light-theme .glass-panel {
+  background: rgba(240, 235, 216, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .glass-panel:hover {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .navbar {
+  background-color: rgba(252, 249, 242, 0.9);
+}
+
+body.light-theme .navbar.scrolled {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .mobile-menu {
+  box-shadow: -10px 0 30px -15px rgba(0, 0, 0, 0.1);
+}

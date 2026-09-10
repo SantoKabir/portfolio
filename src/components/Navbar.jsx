@@ -1,18 +1,38 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
 
   useEffect(() => {
+    // Check local storage for theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      setTheme('light');
+      document.body.classList.add('light-theme');
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const toggleTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light');
+      document.body.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      setTheme('dark');
+      document.body.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -32,14 +52,19 @@ const Navbar = () => {
         
         <div className="desktop-menu">
           <ul className="nav-links">
-            {navLinks.map((link, i) => (
+            {navLinks.map((link) => (
               <li key={link.name}>
                 <a href={link.href}>
-                  <span className="text-accent">0{i + 1}.</span> {link.name}
+                  {link.name}
                 </a>
               </li>
             ))}
           </ul>
+          
+          <button className="theme-toggle-btn" onClick={toggleTheme} aria-label="Toggle Theme">
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+
           <a href={`${import.meta.env.BASE_URL}Santo_Kabir_Ahmed_CV.pdf`} target="_blank" rel="noopener noreferrer" className="btn-primary resume-btn">
             Resume
           </a>
@@ -51,11 +76,15 @@ const Navbar = () => {
       </div>
 
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <button className="theme-toggle-btn-mobile" onClick={toggleTheme} aria-label="Toggle Theme">
+          {theme === 'dark' ? <><Sun size={20} /> <span style={{marginLeft: '10px'}}>Light Mode</span></> : <><Moon size={20} /> <span style={{marginLeft: '10px'}}>Dark Mode</span></>}
+        </button>
+
         <ul className="mobile-nav-links">
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <li key={link.name} onClick={() => setMobileMenuOpen(false)}>
               <a href={link.href}>
-                <span className="text-accent">0{i + 1}.</span> {link.name}
+                {link.name}
               </a>
             </li>
           ))}
