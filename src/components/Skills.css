@@ -63,6 +63,37 @@
 
 .publication-card {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pub-preview-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .pub-preview-img {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .publication-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .pub-preview-img {
+    width: 35%;
+    max-width: 300px;
+  }
+  
+  .pub-content {
+    flex: 1;
+  }
 }
 
 .pub-authors {

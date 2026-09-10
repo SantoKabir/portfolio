@@ -55,16 +55,23 @@ const Skills = () => {
       <div className="publications-section mt-50">
         <h3 className="sub-title">Publications</h3>
         <div className="publication-card glass-panel">
-          <p className="pub-authors">
-            Chamon, A. S., Parash, M. A. H., Fahad, J. I., Hassan, S. M. N., <strong>Ahmed, S. K.</strong>, et al. (2024).
-          </p>
-          <h4 className="pub-title">
-            Heavy metals in dates (Phoenix dactylifera L.) collected from Medina and Dhaka City markets, and assessment of human health risk.
-          </h4>
-          <p className="pub-journal">Environmental Systems Research, 13, 27. (Q1 Journal)</p>
-          <a href="https://doi.org/10.1186/s40068-024-00354-7" target="_blank" rel="noopener noreferrer" className="pub-link text-accent text-mono">
-            View Publication
-          </a>
+          <img 
+            src={`${import.meta.env.BASE_URL}publication_preview.png`} 
+            alt="Graphical Abstract of the Publication" 
+            className="pub-preview-img" 
+          />
+          <div className="pub-content">
+            <p className="pub-authors">
+              Chamon, A. S., Parash, M. A. H., Fahad, J. I., Hassan, S. M. N., <strong>Ahmed, S. K.</strong>, et al. (2024).
+            </p>
+            <h4 className="pub-title">
+              Heavy metals in dates (Phoenix dactylifera L.) collected from Medina and Dhaka City markets, and assessment of human health risk.
+            </h4>
+            <p className="pub-journal">Environmental Systems Research, 13, 27. (Q1 Journal)</p>
+            <a href="https://doi.org/10.1186/s40068-024-00354-7" target="_blank" rel="noopener noreferrer" className="pub-link text-accent text-mono">
+              View Publication
+            </a>
+          </div>
         </div>
       </div>
     </section>
