@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -17,12 +17,6 @@ const Hero = () => {
           
           <div className="hero-location text-mono">
             <MapPin size={16} /> Dhaka, Bangladesh
-          </div>
-
-          <div className="hero-cta">
-            <a href="#projects" className="btn-primary hero-btn">
-              Check out my work <ArrowRight size={18} />
-            </a>
           </div>
         </div>
         
