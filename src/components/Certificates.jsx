@@ -70,7 +70,13 @@ const Certificates = () => {
       </h2>
       <div className="certificates-grid">
         {certificates.map((cert, index) => (
-          <div key={index} className="certificate-card">
+          <a 
+            key={index} 
+            href={cert.externalLink ? cert.externalLink : `${import.meta.env.BASE_URL}${cert.file}`}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="certificate-card"
+          >
             <div className="cert-image-container">
               <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} />
             </div>
@@ -84,16 +90,11 @@ const Certificates = () => {
               <h3 className="cert-title">{cert.title}</h3>
               <p className="cert-description">{cert.description}</p>
               
-              <a 
-                href={cert.externalLink ? cert.externalLink : `${import.meta.env.BASE_URL}${cert.file}`}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="cert-verify-link text-mono"
-              >
+              <span className="cert-verify-link text-mono">
                 Verify <ExternalLink size={14} />
-              </a>
+              </span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
