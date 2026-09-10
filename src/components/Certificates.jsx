@@ -1,36 +1,57 @@
 import React from 'react';
-import { ExternalLink, FileText, Image as ImageIcon } from 'lucide-react';
+import { ExternalLink, FileText } from 'lucide-react';
 import './Certificates.css';
 
 const Certificates = () => {
   const certificates = [
     {
-      title: 'Youth for Earth (2nd Runner-Up)',
+      title: 'YOUTH FOR EARTH',
+      org: 'Ministry of Youth & Sports',
+      date: 'Feb 2025',
+      description: '2nd Runner-Up in the Youth for Earth Case Solving Competition.',
       file: 'Youth for Earth.jpg',
+      image: 'Youth for Earth.jpg', // Using same for thumbnail
       type: 'image'
     },
     {
-      title: 'Python Programming',
+      title: 'PYTHON PROGRAMMING',
+      org: 'University of Helsinki',
+      date: '2024',
+      description: 'Advanced Python Programming certification.',
       file: 'Santo_Kabir_Python.png',
+      image: 'Santo_Kabir_Python.png',
       type: 'image'
     },
     {
-      title: 'ArcGIS Pro Certificate',
+      title: 'NGS + TNC EXTERNSHIP',
+      org: 'National Geographic Society',
+      date: 'Sep 2025',
+      description: 'Freshwater and Community Conservation Externship.',
+      file: 'NGS+TNC Externship Certificate.png',
+      image: 'NGS+TNC Externship Certificate.png',
+      type: 'image'
+    },
+    {
+      title: 'ARCGIS PRO CERTIFICATE',
+      org: 'Esri',
+      date: '2024',
+      description: 'Certification in ArcGIS Pro geospatial software.',
       file: 'ArcGIS Pro Certificate.pdf',
       type: 'pdf'
     },
     {
-      title: 'NGS + TNC Externship',
-      file: 'NGS+TNC Externship Certificate.png',
-      type: 'image'
-    },
-    {
-      title: 'NPU Student Ambassador',
+      title: 'NPU STUDENT AMBASSADOR',
+      org: 'Nature Positive Universities',
+      date: 'Dec 2025',
+      description: 'Student Ambassador and Communications Team member.',
       file: 'NPU Student Ambassador Certificate - Santo Kabir Ahmed.pdf',
       type: 'pdf'
     },
     {
-      title: 'IELTS Score (8.00)',
+      title: 'IELTS ACADEMIC',
+      org: 'British Council',
+      date: '2024',
+      description: 'Achieved an overall band score of 8.00.',
       file: 'Santo_Kabir_Ahmed_IELTS.pdf',
       type: 'pdf'
     }
@@ -41,21 +62,37 @@ const Certificates = () => {
       <h2 className="section-title">Certifications & Awards</h2>
       <div className="certificates-grid">
         {certificates.map((cert, index) => (
-          <a 
-            key={index}
-            href={`${import.meta.env.BASE_URL}${cert.file}`}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="certificate-card glass-panel"
-          >
-            <div className="cert-icon text-accent">
-              {cert.type === 'pdf' ? <FileText size={40} /> : <ImageIcon size={40} />}
+          <div key={index} className="certificate-card">
+            <div className="cert-image-container">
+              {cert.type === 'image' ? (
+                <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} />
+              ) : (
+                <div className="pdf-placeholder">
+                  <FileText size={48} className="text-accent" />
+                  <span className="text-mono mt-2">PDF Document</span>
+                </div>
+              )}
             </div>
-            <h3 className="cert-title">{cert.title}</h3>
-            <div className="cert-link text-mono text-accent">
-              View Document <ExternalLink size={16} />
+            
+            <div className="cert-content">
+              <div className="cert-meta text-mono">
+                <span className="cert-org">{cert.org}</span>
+                <span className="cert-date">{cert.date}</span>
+              </div>
+              
+              <h3 className="cert-title">{cert.title}</h3>
+              <p className="cert-description">{cert.description}</p>
+              
+              <a 
+                href={`${import.meta.env.BASE_URL}${cert.file}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="cert-verify-link text-mono"
+              >
+                Verify <ExternalLink size={14} />
+              </a>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>
