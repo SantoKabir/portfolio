@@ -10,7 +10,7 @@ const Certificates = () => {
       date: 'Feb 2025',
       description: '2nd Runner-Up in the Youth for Earth Case Solving Competition.',
       file: 'Youth for Earth.jpg',
-      image: 'Youth for Earth.jpg', // Using same for thumbnail
+      image: 'Youth for Earth.jpg',
       type: 'image'
     },
     {
@@ -27,8 +27,8 @@ const Certificates = () => {
       org: 'National Geographic Society',
       date: 'Sep 2025',
       description: 'Freshwater and Community Conservation Externship.',
-      file: 'NGS+TNC Externship Certificate.png',
-      image: 'NGS+TNC Externship Certificate.png',
+      file: 'NGS_TNC_Externship_Certificate.png',
+      image: 'NGS_TNC_Externship_Certificate.png',
       type: 'image'
     },
     {
@@ -37,6 +37,7 @@ const Certificates = () => {
       date: '2024',
       description: 'Certification in ArcGIS Pro geospatial software.',
       file: 'ArcGIS Pro Certificate.pdf',
+      image: 'ArcGIS_Pro_Certificate.png',
       type: 'pdf'
     },
     {
@@ -45,6 +46,7 @@ const Certificates = () => {
       date: 'Dec 2025',
       description: 'Student Ambassador and Communications Team member.',
       file: 'NPU Student Ambassador Certificate - Santo Kabir Ahmed.pdf',
+      image: 'NPU_Student_Ambassador.png',
       type: 'pdf'
     },
     {
@@ -53,6 +55,7 @@ const Certificates = () => {
       date: '2024',
       description: 'Achieved an overall band score of 8.00.',
       file: 'Santo_Kabir_Ahmed_IELTS.pdf',
+      image: 'IELTS.png',
       type: 'pdf'
     }
   ];
@@ -64,14 +67,7 @@ const Certificates = () => {
         {certificates.map((cert, index) => (
           <div key={index} className="certificate-card">
             <div className="cert-image-container">
-              {cert.type === 'image' ? (
-                <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} />
-              ) : (
-                <div className="pdf-placeholder">
-                  <FileText size={48} className="text-accent" />
-                  <span className="text-mono mt-2">PDF Document</span>
-                </div>
-              )}
+              <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} />
             </div>
             
             <div className="cert-content">
