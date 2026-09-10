@@ -18,6 +18,12 @@ const Hero = () => {
           <div className="hero-location text-mono">
             <MapPin size={16} /> Dhaka, Bangladesh
           </div>
+
+          <div className="hero-cta">
+            <a href={`${import.meta.env.BASE_URL}Santo_Kabir_Ahmed_CV.pdf`} target="_blank" rel="noopener noreferrer" className="btn-primary hero-btn">
+              My Resume
+            </a>
+          </div>
         </div>
         
         <div className="hero-image-wrapper">
