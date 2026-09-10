@@ -24,7 +24,7 @@ const Skills = () => {
   return (
     <section id="skills" className="section container">
       <h2 className="section-title">
-        <span className="text-mono text-accent" style={{marginRight: '10px'}}>03.</span> 
+        <span className="text-mono text-accent" style={{marginRight: '10px'}}>04.</span> 
         Technical Skills & Expertise
       </h2>
       

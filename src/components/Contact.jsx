@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section id="contact" className="section container">
       <div className="contact-wrapper">
-        <p className="contact-overline text-mono text-accent">05. What's Next?</p>
+        <p className="contact-overline text-mono text-accent">06. What's Next?</p>
         <h2 className="contact-title">Get In Touch</h2>
         <p className="contact-description">
           I'm currently looking for opportunities for advanced academic research and environmental projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!
@@ -38,10 +38,6 @@ const Contact = () => {
             </div>
           </a>
         </div>
-        
-        <a href="mailto:santoahmed01@gmail.com" className="btn-primary say-hello-btn">
-          Say Hello
-        </a>
       </div>
       
       <footer className="footer text-mono text-secondary">

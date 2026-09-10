@@ -28,7 +28,7 @@ const Projects = () => {
   return (
     <section id="projects" className="section container">
       <h2 className="section-title">
-        <span className="text-mono text-accent" style={{marginRight: '10px'}}>02.</span> 
+        <span className="text-mono text-accent" style={{marginRight: '10px'}}>03.</span> 
         Some Things I've Built
       </h2>
       

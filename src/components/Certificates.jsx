@@ -65,7 +65,7 @@ const Certificates = () => {
   return (
     <section id="certificates" className="section container">
       <h2 className="section-title">
-        <span className="text-mono text-accent" style={{marginRight: '10px'}}>04.</span> 
+        <span className="text-mono text-accent" style={{marginRight: '10px'}}>05.</span> 
         Certifications & Awards
       </h2>
       <div className="certificates-grid">
