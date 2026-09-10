@@ -45,6 +45,9 @@ const Experience = () => {
         'Conducted in-person field survey of the site of interest and interviews of local people for first-hand reliable data.',
         'Collected, synthesized, and visualized a wide range of data using GIS software to enhance public understanding of environmental impacts.',
         'Synthesized complex GIS layers into accessible, high-impact digital content.'
+      ],
+      docs: [
+        { name: 'Externship Certificate', file: 'https://www.credential.net/4ee77932-a76a-4ffe-a063-ba0f172121bc' }
       ]
     },
     {
@@ -55,6 +58,9 @@ const Experience = () => {
         'Assisted in the analysis of food samples for heavy metal presence using standard laboratory protocols.',
         'Maintained detailed, accurate documentation of experimental procedures and results for ongoing research projects.',
         'Took a major part in writing and editing the manuscript for publication.'
+      ],
+      docs: [
+        { name: 'View Publication', file: 'https://doi.org/10.1186/s40068-024-00354-7' }
       ]
     }
   ];
@@ -63,7 +69,7 @@ const Experience = () => {
     <section id="experience" className="section container">
       <h2 className="section-title">
         <span className="text-mono text-accent" style={{marginRight: '10px'}}>01.</span> 
-        Where I've Worked
+        My Experience
       </h2>
       
       <div className="experience-container">
@@ -74,9 +80,7 @@ const Experience = () => {
               className={`tab-btn ${activeTab === index ? 'active' : ''}`}
               onClick={() => setActiveTab(index)}
             >
-              {exp.company === 'National Geographic Society' ? 'NGS Project' : 
-               exp.company === 'Bangladesh Agricultural University' ? 'BAU' :
-               exp.company === 'NGS & The Nature Conservancy' ? 'Externship' : 'DU Research'}
+              {exp.role === 'Extern' ? 'National Geographic Externship' : exp.role}
             </button>
           ))}
           <div 
@@ -103,7 +107,7 @@ const Experience = () => {
               {experiences[activeTab].docs.map((doc, i) => (
                 <a 
                   key={i}
-                  href={`${import.meta.env.BASE_URL}${doc.file}`} 
+                  href={doc.file.startsWith('http') ? doc.file : `${import.meta.env.BASE_URL}${doc.file}`} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="doc-link"
