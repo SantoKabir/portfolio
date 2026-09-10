@@ -27,7 +27,10 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section container">
-      <h2 className="section-title">Some Things I've Built</h2>
+      <h2 className="section-title">
+        <span className="text-mono text-accent" style={{marginRight: '10px'}}>02.</span> 
+        Some Things I've Built
+      </h2>
       
       <div className="projects-grid">
         {featuredProjects.map((project, index) => (

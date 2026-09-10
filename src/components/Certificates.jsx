@@ -64,7 +64,10 @@ const Certificates = () => {
 
   return (
     <section id="certificates" className="section container">
-      <h2 className="section-title">Certifications & Awards</h2>
+      <h2 className="section-title">
+        <span className="text-mono text-accent" style={{marginRight: '10px'}}>04.</span> 
+        Certifications & Awards
+      </h2>
       <div className="certificates-grid">
         {certificates.map((cert, index) => (
           <div key={index} className="certificate-card">

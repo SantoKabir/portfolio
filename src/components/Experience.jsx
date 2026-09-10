@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FileText } from 'lucide-react';
 import './Experience.css';
 
 const Experience = () => {
@@ -15,6 +16,9 @@ const Experience = () => {
         'Executed rigorous field sampling of soil, groundwater, and surface water across multiple sites to quantify the extent of heavy metal industrial pollution.',
         'Developed and delivered targeted environmental education programs, including interactive awareness campaigns and art competitions engaging students across two local schools.',
         'Designed and distributed high-impact visual media—including posters and a comprehensive informative booklet—to drive widespread community knowledge dissemination and climate resilience.'
+      ],
+      docs: [
+        { name: 'SEED Funding Achievement Email', file: 'Seed Funding Achievement.pdf' }
       ]
     },
     {
@@ -27,6 +31,9 @@ const Experience = () => {
         'Learned and participated in soil, water and gas (using gas chambers) sample collection from soil and water bodies.',
         'Applied R programming for data analysis and visualization of soil, crop and water parameters.',
         'Applied GIS for geospatial data analysis.'
+      ],
+      docs: [
+        { name: 'RA Appointment Letter', file: 'Santo_Kabir_Ahmed_RA_Appointment_Letter.pdf' }
       ]
     },
     {
@@ -54,7 +61,10 @@ const Experience = () => {
 
   return (
     <section id="experience" className="section container">
-      <h2 className="section-title">Where I've Worked</h2>
+      <h2 className="section-title">
+        <span className="text-mono text-accent" style={{marginRight: '10px'}}>01.</span> 
+        Where I've Worked
+      </h2>
       
       <div className="experience-container">
         <div className="experience-tabs">
@@ -71,7 +81,7 @@ const Experience = () => {
           ))}
           <div 
             className="tab-highlight" 
-            style={{ transform: `translateY(${activeTab * 42}px)` }}
+            style={{ transform: `translateY(${activeTab * 50}px)` }}
           ></div>
         </div>
         
@@ -87,6 +97,23 @@ const Experience = () => {
               <li key={i}>{item}</li>
             ))}
           </ul>
+
+          {experiences[activeTab].docs && (
+            <div className="experience-docs">
+              {experiences[activeTab].docs.map((doc, i) => (
+                <a 
+                  key={i}
+                  href={`${import.meta.env.BASE_URL}${doc.file}`} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="doc-link"
+                >
+                  <FileText size={16} />
+                  <span>{doc.name}</span>
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

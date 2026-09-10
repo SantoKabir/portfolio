@@ -96,16 +96,6 @@ ul {
   margin-left: 20px;
 }
 
-.section-title::before {
-  counter-increment: section;
-  content: "0" counter(section) ". ";
-  margin-right: 10px;
-  color: var(--accent-secondary);
-  font-family: var(--font-mono);
-  font-size: clamp(16px, 3vw, 20px);
-  font-weight: 400;
-}
-
 .glass-panel {
   background: rgba(17, 34, 64, 0.7);
   backdrop-filter: blur(10px);
