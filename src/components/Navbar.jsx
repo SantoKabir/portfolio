@@ -39,7 +39,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <a href="/Santo_Kabir_Ahmed_CV.pdf" target="_blank" rel="noopener noreferrer" className="btn-primary resume-btn">
+          <a href={`${import.meta.env.BASE_URL}Santo_Kabir_Ahmed_CV.pdf`} target="_blank" rel="noopener noreferrer" className="btn-primary resume-btn">
             Resume
           </a>
         </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
           ))}
         </ul>
         <a 
-          href="/Santo_Kabir_Ahmed_CV.pdf" 
+          href={`${import.meta.env.BASE_URL}Santo_Kabir_Ahmed_CV.pdf`} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="btn-primary resume-btn-mobile"

@@ -8,7 +8,7 @@ const Projects = () => {
     {
       title: 'Dhaleshwari River Pollution Awareness',
       description: 'A National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on downstream farming families. Conducted comprehensive community surveys and collected samples for heavy metal assessment.',
-      image: '/DRPA.jpg',
+      image: `${import.meta.env.BASE_URL}DRPA.jpg`,
       tags: ['Environmental Advocacy', 'GIS Mapping', 'Field Survey', 'Community Leadership'],
       links: {
         external: 'https://arcg.is/1H9Xy12'
@@ -17,7 +17,7 @@ const Projects = () => {
     {
       title: 'Two Rivers, One Poison',
       description: 'An ArcGIS StoryMap developed during my NGS & The Nature Conservancy externship. It integrates geospatial data with human-interest narratives to visualize the footprint of industrial pollution from the Tannery Industrial Estate.',
-      image: '/Externship.jpg',
+      image: `${import.meta.env.BASE_URL}Externship.jpg`,
       tags: ['ArcGIS', 'Digital Storytelling', 'Geospatial Analysis', 'Data Visualization'],
       links: {
         external: 'https://arcg.is/1OGOCi1'
