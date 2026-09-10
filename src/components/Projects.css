@@ -150,25 +150,31 @@
   .project-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    border-radius: var(--border-radius);
+    overflow: hidden;
   }
 
   .project-content,
   .project-card:nth-of-type(even) .project-content {
     grid-column: 1 / -1;
-    padding: 40px 40px 30px;
+    padding: 25px 20px;
     text-align: left;
-    position: absolute;
-    height: 100%;
+    position: relative;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    background-color: var(--bg-secondary);
   }
 
   .project-image {
     grid-column: 1 / -1;
-    opacity: 0.15;
-    height: 100%;
+    opacity: 1;
+    height: 250px;
+    border-radius: 0;
+    box-shadow: none;
   }
 
   .project-card:nth-of-type(even) .project-image {
@@ -177,7 +183,7 @@
 
   .project-description {
     background-color: transparent;
-    padding: 20px 0;
+    padding: 15px 0;
     box-shadow: none;
     border: none;
     backdrop-filter: none;
