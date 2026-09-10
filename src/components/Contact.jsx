@@ -41,7 +41,6 @@ const Contact = () => {
       </div>
       
       <footer className="footer text-mono text-secondary">
-        <p>Built with React & Vite.</p>
         <p>Santo Kabir Ahmed © 2026</p>
       </footer>
     </section>
