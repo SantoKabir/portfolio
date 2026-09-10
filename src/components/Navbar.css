@@ -79,7 +79,7 @@
 }
 
 body.light-theme .theme-toggle-btn:hover {
-  background: rgba(15, 118, 110, 0.1);
+  background: rgba(194, 94, 33, 0.1);
 }
 
 .mobile-menu-btn {
@@ -138,7 +138,7 @@ body.light-theme .theme-toggle-btn:hover {
 }
 
 body.light-theme .theme-toggle-btn-mobile:hover {
-  background: rgba(15, 118, 110, 0.1);
+  background: rgba(194, 94, 33, 0.1);
 }
 
 .mobile-nav-links a {
