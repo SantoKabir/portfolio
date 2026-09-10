@@ -8,7 +8,13 @@ const Education = () => {
       degree: 'BSc in Soil, Water and Environment',
       score: 'CGPA 3.82/4.00',
       year: '2026',
-      logo: 'Dhaka-University-Logo.png'
+      logo: 'Dhaka-University-Logo.png',
+      links: [
+        { name: '1st Year Result', url: 'http://result.du.ac.bd/?MTc3OHwyMDIwNjE3MTkyfDg3MDYz' },
+        { name: '2nd Year Result', url: 'http://result.du.ac.bd/?MjYxNnwyMDIwNjE3MTkyfDEzMzk1NA==' },
+        { name: '3rd Year Result', url: 'http://result.du.ac.bd/?MzcxOHwyMDIwNjE3MTkyfDIzMjk5NTQ=' },
+        { name: '4th Year Result', url: 'http://result.du.ac.bd/?NDk4OHwyMDIwNjE3MTkyfDI0MjQ0MTU=' }
+      ]
     },
     {
       institution: 'Notre Dame College',
@@ -49,6 +55,21 @@ const Education = () => {
                   <span>{edu.score}</span>
                   <span className="year">{edu.year}</span>
                 </div>
+                {edu.links && (
+                  <div className="education-links">
+                    {edu.links.map((link, i) => (
+                      <a 
+                        key={i} 
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="education-link text-mono"
+                      >
+                        {link.name}
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </div>

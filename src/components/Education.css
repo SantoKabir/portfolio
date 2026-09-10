@@ -50,6 +50,26 @@
   font-size: 14px;
 }
 
+.education-links {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.education-link {
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+}
+
+.education-link:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .education-header {
     flex-direction: column;
