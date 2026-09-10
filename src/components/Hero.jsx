@@ -9,10 +9,10 @@ const Hero = () => {
         <div className="hero-content">
           <p className="hero-greeting text-mono text-accent">Hi, my name is</p>
           <h1 className="hero-name">Santo Kabir Ahmed.</h1>
-          <h2 className="hero-subtitle">I build environmental solutions.</h2>
+          <h2 className="hero-subtitle">Bridging geospatial technology and water science for sustainable environmental management.</h2>
           
           <p className="hero-description">
-            I'm a Soil, Water, and Environment postgraduate candidate with a proven track record in managing field surveys, laboratory analysis, and digital storytelling for environmental advocacy. 
+            I'm a Soil, Water, and Environment postgraduate candidate specializing in GIS and environmental modeling to develop sustainable water resource strategies.
           </p>
           
           <div className="hero-location text-mono">
