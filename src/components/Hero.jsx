@@ -12,7 +12,7 @@ const Hero = () => {
           <h2 className="hero-subtitle">Bridging geospatial technology and water science for sustainable environmental management.</h2>
           
           <p className="hero-description">
-            I'm a Soil, Water, and Environment postgraduate candidate specializing in GIS and environmental modeling to develop sustainable water resource strategies.
+            I'm an environmental researcher specializing in soil and water science. I am eager to apply geospatial modeling, data analytics, and comprehensive field research to understand water pollution and engineer sustainable, nature-based solutions.
           </p>
           
           <div className="hero-location text-mono">
