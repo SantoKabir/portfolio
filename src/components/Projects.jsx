@@ -38,7 +38,7 @@ const Projects = () => {
             <div className="project-image">
               <a href={project.links.external} target="_blank" rel="noopener noreferrer">
                 <div className="image-overlay"></div>
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </a>
             </div>
             

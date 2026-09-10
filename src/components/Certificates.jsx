@@ -80,7 +80,7 @@ const Certificates = () => {
             className={`certificate-card ${!showAll && index >= 2 ? 'mobile-hidden' : ''}`}
           >
             <div className="cert-image-container">
-              <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} />
+              <img src={`${import.meta.env.BASE_URL}${cert.image}`} alt={cert.title} loading="lazy" decoding="async" />
             </div>
             
             <div className="cert-content">

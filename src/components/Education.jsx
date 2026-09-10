@@ -47,6 +47,8 @@ const Education = () => {
                 src={`${import.meta.env.BASE_URL}${edu.logo}`} 
                 alt={`${edu.institution} logo`} 
                 className="education-logo"
+                loading="lazy"
+                decoding="async"
               />
               <div className="education-info">
                 <h3 className="institution-name">{edu.institution}</h3>

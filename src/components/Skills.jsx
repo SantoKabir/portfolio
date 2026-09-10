@@ -75,6 +75,8 @@ const Skills = () => {
             src={`${import.meta.env.BASE_URL}publication_preview.png`} 
             alt="Graphical Abstract of the Publication" 
             className="pub-preview-img" 
+            loading="lazy"
+            decoding="async"
           />
           <div className="pub-content">
             <p className="pub-authors">
