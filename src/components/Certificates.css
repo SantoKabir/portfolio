@@ -101,3 +101,23 @@
 .cert-verify-link:hover {
   color: var(--text-primary);
 }
+
+/* Light Theme Overrides */
+body.light-theme .certificate-card {
+  background-color: rgba(240, 235, 216, 0.6);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .certificate-card:hover {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .cert-image-container {
+  background-color: var(--bg-primary);
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .cert-title {
+  color: var(--text-primary);
+}
