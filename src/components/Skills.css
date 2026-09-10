@@ -1,0 +1,98 @@
+.skills-content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.skills-description {
+  max-width: 600px;
+  color: var(--text-secondary);
+  font-size: 18px;
+}
+
+.skills-description p {
+  margin-bottom: 15px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skill-category {
+  padding: 25px;
+}
+
+.category-title {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-list li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.skills-list li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent-secondary);
+  font-family: var(--font-mono);
+}
+
+.mt-50 {
+  margin-top: 80px;
+}
+
+.sub-title {
+  font-size: 24px;
+  color: var(--text-primary);
+  margin-bottom: 30px;
+}
+
+.publication-card {
+  padding: 30px;
+}
+
+.pub-authors {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.pub-authors strong {
+  color: var(--text-primary);
+}
+
+.pub-title {
+  font-size: 18px;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+
+.pub-journal {
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.pub-link {
+  font-size: 14px;
+  display: inline-block;
+}
+
+.pub-link:hover {
+  text-decoration: underline;
+}
