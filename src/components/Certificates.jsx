@@ -16,7 +16,7 @@ const Certificates = () => {
     {
       title: 'PYTHON PROGRAMMING',
       org: 'University of Helsinki',
-      date: '2024',
+      date: 'Feb 2026',
       description: 'Advanced Python Programming certification.',
       file: 'Santo_Kabir_Python.png',
       image: 'Santo_Kabir_Python.png',
@@ -36,7 +36,7 @@ const Certificates = () => {
     {
       title: 'ARCGIS PRO CERTIFICATE',
       org: 'Esri',
-      date: '2024',
+      date: 'Feb 2026',
       description: 'Certification in ArcGIS Pro geospatial software.',
       file: 'ArcGIS Pro Certificate.pdf',
       image: 'ArcGIS_Pro_Certificate.png',
@@ -45,7 +45,7 @@ const Certificates = () => {
     {
       title: 'NPU STUDENT AMBASSADOR',
       org: 'Nature Positive Universities',
-      date: 'Dec 2025',
+      date: 'Aug 2025',
       description: 'Student Ambassador and Communications Team member.',
       file: 'NPU Student Ambassador Certificate - Santo Kabir Ahmed.pdf',
       image: 'NPU_Student_Ambassador.png',
@@ -54,7 +54,7 @@ const Certificates = () => {
     {
       title: 'IELTS ACADEMIC',
       org: 'British Council',
-      date: '2025',
+      date: 'Dec 2025',
       description: 'Achieved an overall band score of 8.00.',
       file: 'Santo_Kabir_Ahmed_IELTS.pdf',
       image: 'IELTS.png',
