@@ -11,9 +11,9 @@
 .experience-item {
   display: flex;
   align-items: flex-start;
-  padding: 60px 0;
+  padding: 40px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  gap: 50px;
+  gap: 35px;
 }
 
 .experience-item:last-child {
@@ -32,15 +32,25 @@ body.light-theme .experience-item {
   flex: 0 0 32%;
 }
 
-.exp-image-column img {
+.image-accent-wrapper {
+  position: relative;
+  background-color: var(--accent-secondary);
+  border-radius: 50%;
+  overflow: hidden;
+  display: block;
+}
+
+.image-accent-wrapper img {
   width: 100%;
   aspect-ratio: 1; 
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  mix-blend-mode: multiply;
+  filter: grayscale(100%) contrast(1);
+  transition: filter 0.3s ease, mix-blend-mode 0.3s ease;
 }
 
-.exp-image-column img:hover {
+.image-accent-wrapper:hover img {
+  mix-blend-mode: normal;
   filter: grayscale(0%);
 }
 
@@ -62,12 +72,12 @@ body.light-theme .experience-item {
 .exp-company {
   font-size: 32px;
   color: var(--text-primary);
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   line-height: 1.2;
 }
 
 .exp-description-container {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .exp-summary {
@@ -134,6 +144,17 @@ body.light-theme .experience-item {
   align-items: center;
   padding: 10px 0;
   transition: color 0.2s ease;
+}
+
+/* Restore document border for PC only */
+@media (min-width: 993px) {
+  .doc-link-editorial {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  body.light-theme .doc-link-editorial {
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+  }
 }
 
 .doc-link-editorial:hover {
@@ -204,15 +225,22 @@ body.light-theme .experience-item {
 
   .exp-image-column {
     width: 100vw;
-    margin-left: -15px; /* Pull it out by the 15px container padding */
+    margin-left: -15px;
     margin-right: -15px;
   }
 
-  .exp-image-column img {
-    width: calc(100% + 30px); /* Fill the full width including negative margins */
+  .image-accent-wrapper {
+    width: calc(100% + 30px);
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .image-accent-wrapper img {
+    width: 100%;
     max-height: 400px;
-    filter: none; /* No grayscale accent on mobile */
-    border-radius: 0; /* Remove rounded corners since it touches the edge */
+    filter: none;
+    mix-blend-mode: normal;
+    border-radius: 0;
   }
   
   .exp-meta-column,

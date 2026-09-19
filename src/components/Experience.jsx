@@ -14,23 +14,6 @@ const Experience = () => {
 
   const experiences = [
     {
-      role: 'Project Lead',
-      company: 'National Geographic Society',
-      duration: 'Dec 2025 – May 2026',
-      image: 'Project_Lead.jpg',
-      summary: 'Spearheaded a National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on 100+ downstream farming families, directing a team of 20+ volunteers to conduct comprehensive health and environmental surveys, and executing targeted awareness campaigns for climate resilience.',
-      description: [
-        'Spearheaded a National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on 100+ downstream farming families.',
-        'Directed a dedicated team of over 20 volunteers, orchestrating a comprehensive community health survey of 56 residents to map correlations with contaminated river water usage.',
-        'Executed rigorous field sampling of soil, groundwater, and surface water across multiple sites to quantify the extent of heavy metal industrial pollution.',
-        'Developed and delivered targeted environmental education programs, including interactive awareness campaigns and art competitions engaging students across two local schools.',
-        'Designed and distributed high-impact visual media—including posters and a comprehensive informative booklet—to drive widespread community knowledge dissemination and climate resilience.'
-      ],
-      docs: [
-        { name: 'Extern Experience Letter', file: 'Extern_Experience_Letter.pdf' }
-      ]
-    },
-    {
       role: 'Research Assistant',
       company: 'Bangladesh Agricultural University',
       duration: 'June 2026 – Present',
@@ -45,6 +28,23 @@ const Experience = () => {
       ],
       docs: [
         { name: 'RA Appointment Letter', file: 'RA_Appointment_Letter.pdf' }
+      ]
+    },
+    {
+      role: 'Project Lead',
+      company: 'National Geographic Society',
+      duration: 'Dec 2025 – May 2026',
+      image: 'Project_Lead.jpg',
+      summary: 'Spearheaded a National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on 100+ downstream farming families, directing a team of 20+ volunteers to conduct comprehensive health and environmental surveys, and executing targeted awareness campaigns for climate resilience.',
+      description: [
+        'Spearheaded a National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on 100+ downstream farming families.',
+        'Directed a dedicated team of over 20 volunteers, orchestrating a comprehensive community health survey of 56 residents to map correlations with contaminated river water usage.',
+        'Executed rigorous field sampling of soil, groundwater, and surface water across multiple sites to quantify the extent of heavy metal industrial pollution.',
+        'Developed and delivered targeted environmental education programs, including interactive awareness campaigns and art competitions engaging students across two local schools.',
+        'Designed and distributed high-impact visual media—including posters and a comprehensive informative booklet—to drive widespread community knowledge dissemination and climate resilience.'
+      ],
+      docs: [
+        { name: 'Extern Experience Letter', file: 'Extern_Experience_Letter.pdf' }
       ]
     },
     {
@@ -91,12 +91,14 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <div className={`experience-item ${index % 2 !== 0 ? 'reverse' : ''}`} key={index}>
             <div className="exp-image-column">
-              <img 
-                src={`${import.meta.env.BASE_URL}${exp.image}`} 
-                alt={exp.company} 
-                loading="lazy" 
-                decoding="async" 
-              />
+              <div className="image-accent-wrapper">
+                <img 
+                  src={`${import.meta.env.BASE_URL}${exp.image}`} 
+                  alt={exp.company} 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
             </div>
             
             <div className="exp-content-column">
