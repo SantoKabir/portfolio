@@ -224,13 +224,14 @@ body.light-theme .experience-item {
   }
 
   .exp-image-column {
-    width: 100vw;
+    flex: 0 0 calc(100% + 30px);
+    width: calc(100% + 30px);
     margin-left: -15px;
     margin-right: -15px;
   }
 
   .image-accent-wrapper {
-    width: calc(100% + 30px);
+    width: 100%;
     background-color: transparent;
     border-radius: 0;
   }
