@@ -6,6 +6,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [theme, setTheme] = useState('dark');
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     // Check local storage for theme
@@ -17,8 +18,25 @@ const Navbar = () => {
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      const sections = document.querySelectorAll('section[id]');
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 150) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight - 50) {
+        current = 'contact';
+      }
+
+      setActiveSection(current);
     };
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -60,7 +78,10 @@ const Navbar = () => {
           <ul className="nav-links">
             {navLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href}>
+                <a 
+                  href={link.href}
+                  className={activeSection === link.href.substring(1) ? 'active' : ''}
+                >
                   {link.name}
                 </a>
               </li>
@@ -85,7 +106,10 @@ const Navbar = () => {
         <ul className="mobile-nav-links">
           {navLinks.map((link) => (
             <li key={link.name} onClick={() => setMobileMenuOpen(false)}>
-              <a href={link.href}>
+              <a 
+                href={link.href}
+                className={activeSection === link.href.substring(1) ? 'active' : ''}
+              >
                 {link.name}
               </a>
             </li>

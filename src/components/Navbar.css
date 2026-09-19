@@ -82,7 +82,8 @@ button.mobile-only-theme {
   gap: 5px;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--accent-secondary);
 }
 
@@ -171,6 +172,12 @@ body.light-theme .theme-toggle-btn-mobile:hover {
   font-size: 18px;
   font-family: var(--font-mono);
   color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active {
+  color: var(--accent-secondary);
 }
 
 @media (max-width: 768px) {
