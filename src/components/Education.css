@@ -70,6 +70,10 @@
   text-decoration: underline;
 }
 
+.education-link.full-width {
+  flex-basis: 100%;
+}
+
 .edu-see-more {
   display: none;
   text-align: center;
