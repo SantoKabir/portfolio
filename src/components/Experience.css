@@ -187,8 +187,8 @@ body.light-theme .doc-link-editorial {
   .experience-item,
   .experience-item.reverse {
     flex-direction: column;
-    padding: 50px 0;
-    gap: 30px;
+    padding: 40px 0;
+    gap: 25px;
   }
   
   .exp-image-column,
@@ -198,14 +198,20 @@ body.light-theme .doc-link-editorial {
     width: 100%;
   }
 
+  /* Add padding to prevent hugging edges on small screens */
+  .exp-content-column {
+    padding: 0 15px;
+  }
+
   .exp-image-column img {
     max-height: 400px;
+    filter: none; /* No grayscale accent on mobile */
+    border-radius: var(--border-radius);
   }
   
   .exp-meta-column,
   .experience-item.reverse .exp-meta-column {
-    padding-left: 0;
-    padding-top: 20px;
+    padding: 20px 15px 0 15px;
     border-left: none;
     border-right: none;
     border-top: 1px solid var(--accent-secondary);
