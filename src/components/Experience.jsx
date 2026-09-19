@@ -103,6 +103,10 @@ const Experience = () => {
               <div className="exp-role">{exp.role.toUpperCase()}</div>
               <h3 className="exp-company">{exp.company}</h3>
               
+              <div className="mobile-duration text-mono">
+                <span className="meta-value">{exp.duration}</span>
+              </div>
+              
               <div className="exp-description-container">
                 {!expandedExp.includes(index) ? (
                   <p className="exp-summary">{exp.summary}</p>

@@ -4,6 +4,10 @@
   margin-top: 20px;
 }
 
+.mobile-duration {
+  display: none;
+}
+
 .experience-item {
   display: flex;
   align-items: flex-start;
@@ -200,21 +204,32 @@ body.light-theme .doc-link-editorial {
 
   /* Add padding to prevent hugging edges on small screens */
   .exp-content-column {
-    padding: 0 15px;
+    padding: 0;
+  }
+
+  .exp-image-column {
+    width: 100vw;
+    margin-left: -15px; /* Pull it out by the 15px container padding */
+    margin-right: -15px;
   }
 
   .exp-image-column img {
+    width: calc(100% + 30px); /* Fill the full width including negative margins */
     max-height: 400px;
     filter: none; /* No grayscale accent on mobile */
-    border-radius: var(--border-radius);
+    border-radius: 0; /* Remove rounded corners since it touches the edge */
   }
   
   .exp-meta-column,
   .experience-item.reverse .exp-meta-column {
-    padding: 20px 15px 0 15px;
-    border-left: none;
-    border-right: none;
-    border-top: 1px solid var(--accent-secondary);
-    text-align: left;
+    display: none; /* Hide original duration column on mobile */
+  }
+
+  .mobile-duration {
+    display: block;
+    color: var(--accent-secondary);
+    font-size: 13px;
+    margin-bottom: 20px;
+    margin-top: -10px;
   }
 }

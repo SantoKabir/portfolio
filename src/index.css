@@ -76,7 +76,8 @@ ul {
 }
 
 .section {
-  padding: var(--section-padding) 0;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
 
 .section-title {
@@ -141,11 +142,12 @@ ul {
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   
   .section {
-    padding: 60px 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
