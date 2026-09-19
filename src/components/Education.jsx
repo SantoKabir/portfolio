@@ -12,6 +12,7 @@ const Education = () => {
       year: '2026',
       logo: 'Dhaka-University-Logo.png',
       links: [
+        { name: 'Certificate', url: 'Santo_Kabir_Ahmed_Provisional_Certificate.pdf' },
         { name: '1st Year Result', url: 'http://result.du.ac.bd/?MTc3OHwyMDIwNjE3MTkyfDg3MDYz' },
         { name: '2nd Year Result', url: 'http://result.du.ac.bd/?MjYxNnwyMDIwNjE3MTkyfDEzMzk1NA==' },
         { name: '3rd Year Result', url: 'http://result.du.ac.bd/?MzcxOHwyMDIwNjE3MTkyfDIzMjk5NTQ=' },
@@ -23,14 +24,22 @@ const Education = () => {
       degree: 'HSC',
       score: 'GPA 5.00',
       year: '2020',
-      logo: 'Notre_Dame.png'
+      logo: 'Notre_Dame.png',
+      links: [
+        { name: 'Certificate', url: 'HSC_Certificates.jpg' },
+        { name: 'Marksheet', url: 'HSC_Marksheets.jpg' }
+      ]
     },
     {
       institution: 'Monipur High School and College',
       degree: 'SSC',
       score: 'GPA 5.00',
       year: '2018',
-      logo: 'Monipur School.png'
+      logo: 'Monipur School.png',
+      links: [
+        { name: 'Certificate', url: 'SSC_Certificates.jpg' },
+        { name: 'Marksheet', url: 'SSC_Marksheet.jpg' }
+      ]
     }
   ];
 
@@ -64,7 +73,7 @@ const Education = () => {
                     {edu.links.map((link, i) => (
                       <a 
                         key={i} 
-                        href={link.url} 
+                        href={link.url.startsWith('http') ? link.url : `${import.meta.env.BASE_URL}${link.url}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="education-link text-mono"
