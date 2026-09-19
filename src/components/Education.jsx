@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Education.css';
 
 const Education = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const educationData = [
     {
       institution: 'University of Dhaka',
@@ -41,7 +43,7 @@ const Education = () => {
       
       <div className="education-grid">
         {educationData.map((edu, index) => (
-          <div className="education-card glass-panel" key={index}>
+          <div className={`education-card glass-panel ${!showAll && index >= 1 ? 'mobile-hidden' : ''}`} key={index}>
             <div className="education-header">
               <img 
                 src={`${import.meta.env.BASE_URL}${edu.logo}`} 
@@ -76,6 +78,15 @@ const Education = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="see-more-container edu-see-more">
+        <button 
+          className="btn-primary text-mono" 
+          onClick={() => setShowAll(!showAll)}
+        >
+          {showAll ? 'See Less' : 'See More'}
+        </button>
       </div>
     </section>
   );

@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
-import { FileText } from 'lucide-react';
 import './Experience.css';
 
 const Experience = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [expandedExp, setExpandedExp] = useState([]);
+
+  const toggleExp = (index) => {
+    if (expandedExp.includes(index)) {
+      setExpandedExp(expandedExp.filter(i => i !== index));
+    } else {
+      setExpandedExp([...expandedExp, index]);
+    }
+  };
 
   const experiences = [
     {
       role: 'Project Lead',
       company: 'National Geographic Society',
       duration: 'Dec 2025 – May 2026',
+      image: 'Project_Lead.jpg',
+      summary: 'Spearheaded a National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on 100+ downstream farming families, directing a team of 20+ volunteers to conduct comprehensive health and environmental surveys, and executing targeted awareness campaigns for climate resilience.',
       description: [
         'Spearheaded a National Geographic Society SEED-funded initiative to assess the impact of industrial discharge on 100+ downstream farming families.',
         'Directed a dedicated team of over 20 volunteers, orchestrating a comprehensive community health survey of 56 residents to map correlations with contaminated river water usage.',
@@ -25,6 +34,8 @@ const Experience = () => {
       role: 'Research Assistant',
       company: 'Bangladesh Agricultural University',
       duration: 'June 2026 – Present',
+      image: 'Research_Assistant.jpg',
+      summary: 'Conducted rigorous wet lab analysis and field sampling of soil, water, and gas parameters, utilizing R programming and GIS to analyze and visualize geospatial and agricultural data for environmental research.',
       description: [
         'Learned to operate various laboratory devices (spectrophotometer, multiparameter etc.).',
         'Learned and utilized various wet lab analytical methods for soil and water sample analysis (Kjeldahl Method for Nitrogen, Wet-oxidation method for Carbon etc.).',
@@ -40,6 +51,8 @@ const Experience = () => {
       role: 'Extern',
       company: 'NGS & The Nature Conservancy',
       duration: 'July 2025 – Sep 2025',
+      image: 'Extern.jpg',
+      summary: 'Developed the "Two Rivers, One Poison" ArcGIS StoryMap by conducting field surveys, synthesizing complex GIS layers, and integrating human-interest narratives to visualize and communicate the footprint of industrial pollution.',
       description: [
         'Developed the "Two Rivers, One Poison" ArcGIS StoryMap, integrating geospatial data with human-interest narratives to visualize the footprint of industrial pollution.',
         'Conducted in-person field survey of the site of interest and interviews of local people for first-hand reliable data.',
@@ -54,6 +67,8 @@ const Experience = () => {
       role: 'Undergraduate Researcher',
       company: 'University of Dhaka',
       duration: '2023 – 2024',
+      image: 'Undergrad_Researcher.jpg',
+      summary: 'Assisted in heavy metal analysis of food samples and maintained rigorous experimental documentation, playing a major role in drafting and editing a research manuscript for publication.',
       description: [
         'Assisted in the analysis of food samples for heavy metal presence using standard laboratory protocols.',
         'Maintained detailed, accurate documentation of experimental procedures and results for ongoing research projects.',
@@ -72,53 +87,66 @@ const Experience = () => {
         My Experience
       </h2>
       
-      <div className="experience-container">
-        <div className="experience-tabs">
-          {experiences.map((exp, index) => (
-            <button 
-              key={index} 
-              className={`tab-btn ${activeTab === index ? 'active' : ''}`}
-              onClick={() => setActiveTab(index)}
-            >
-              {exp.role === 'Extern' ? 'National Geographic Externship' : exp.role}
-            </button>
-          ))}
-          <div 
-            className="tab-highlight" 
-            style={{ transform: `translateY(${activeTab * 50}px)` }}
-          ></div>
-        </div>
-        
-        <div className="experience-content glass-panel">
-          <h3>
-            <span className="role">{experiences[activeTab].role}</span>
-            <span className="company text-accent"> @ {experiences[activeTab].company}</span>
-          </h3>
-          <p className="duration text-mono">{experiences[activeTab].duration}</p>
-          
-          <ul className="description-list">
-            {experiences[activeTab].description.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-
-          {experiences[activeTab].docs && (
-            <div className="experience-docs">
-              {experiences[activeTab].docs.map((doc, i) => (
-                <a 
-                  key={i}
-                  href={doc.file.startsWith('http') ? doc.file : `${import.meta.env.BASE_URL}${doc.file}`} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="doc-link"
-                >
-                  <FileText size={16} />
-                  <span>{doc.name}</span>
-                </a>
-              ))}
+      <div className="experience-list">
+        {experiences.map((exp, index) => (
+          <div className={`experience-item ${index % 2 !== 0 ? 'reverse' : ''}`} key={index}>
+            <div className="exp-image-column">
+              <img 
+                src={`${import.meta.env.BASE_URL}${exp.image}`} 
+                alt={exp.company} 
+                loading="lazy" 
+                decoding="async" 
+              />
             </div>
-          )}
-        </div>
+            
+            <div className="exp-content-column">
+              <div className="exp-role">{exp.role.toUpperCase()}</div>
+              <h3 className="exp-company">{exp.company}</h3>
+              
+              <div className="exp-description-container">
+                {!expandedExp.includes(index) ? (
+                  <p className="exp-summary">{exp.summary}</p>
+                ) : (
+                  <ul className="description-list">
+                    {exp.description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                
+                <button 
+                  className="read-more-btn text-mono" 
+                  onClick={() => toggleExp(index)}
+                >
+                  {expandedExp.includes(index) ? '- Read Less' : '+ Read More'}
+                </button>
+              </div>
+
+              {exp.docs && (
+                <div className="experience-docs-editorial">
+                  {exp.docs.map((doc, i) => (
+                    <a 
+                      key={i}
+                      href={doc.file.startsWith('http') ? doc.file : `${import.meta.env.BASE_URL}${doc.file}`} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="doc-link-editorial"
+                    >
+                      {doc.name.toUpperCase()} <span className="arrow">→</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="exp-meta-column text-mono">
+              <div className="meta-item">
+                <span className="meta-label">Duration</span>
+                <span className="meta-value">{exp.duration}</span>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
