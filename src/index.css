@@ -76,8 +76,9 @@ ul {
 }
 
 .section {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+  padding-top: 60px;
+  padding-bottom: 40px;
+  scroll-margin-top: var(--nav-height);
 }
 
 .section-title {
@@ -146,8 +147,8 @@ ul {
   }
   
   .section {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
