@@ -132,13 +132,8 @@ body.light-theme .experience-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
   transition: color 0.2s ease;
-}
-
-body.light-theme .doc-link-editorial {
-  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 .doc-link-editorial:hover {
