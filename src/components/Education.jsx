@@ -76,7 +76,7 @@ const Education = () => {
                         href={link.url.startsWith('http') ? link.url : `${import.meta.env.BASE_URL}${link.url}`} 
                         target="_blank" 
                         rel="noopener noreferrer" 
-                        className={`education-link text-mono ${link.name === 'Certificate' ? 'full-width' : ''}`}
+                        className={`education-link text-mono ${link.name === 'Certificate' && edu.institution === 'University of Dhaka' ? 'full-width' : ''}`}
                       >
                         {link.name}
                       </a>
